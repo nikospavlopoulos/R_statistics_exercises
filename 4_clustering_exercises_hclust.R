@@ -1,0 +1,16 @@
+?iris
+dat=iris[,1:4]
+summary(dat)
+View(dat)
+pmatrix = scale(dat)
+View(pmatrix)
+d = dist(pmatrix)
+c = hclust(d, method="ward.D2")
+plot(c)
+rect.hclust(c, k=3)
+rect.hclust(c, k=2)
+rect.hclust(c, k=4)
+groups <- cutree(c, k=3)
+table(iris$Species,groups)
+plot(groups)
+plot(iris$Species,groups)

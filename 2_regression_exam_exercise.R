@@ -1,0 +1,8 @@
+library(rpart)
+library(rattle)
+library(rpart.plot)
+tree_model <- rpart(cyl~., data=mtcars,method = "anova")
+summary(tree_model)
+plot(tree_model)
+text(tree_model)
+fancyRpartPlot(tree_model)
